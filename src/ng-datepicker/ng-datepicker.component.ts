@@ -194,6 +194,8 @@ export class NgDatepickerComponent implements ControlValueAccessor, OnInit, OnCh
 
     this.displayValue = format(this.innerValue, this.displayFormat, this.locale);
     this.barTitle = format(start, this.barTitleFormat, this.locale);
+    const split = this.barTitle.split(' ');
+    this.barTitle = `${split[0]} ${+split[1] + 543}`;
   }
 
   initYears(): void {
@@ -231,6 +233,8 @@ export class NgDatepickerComponent implements ControlValueAccessor, OnInit, OnCh
       this.init();
       this.displayValue = format(this.innerValue, this.displayFormat, this.locale);
       this.barTitle = format(startOfMonth(val), this.barTitleFormat, this.locale);
+      const split = this.barTitle.split(' ');
+      this.barTitle = `${split[0]} ${+split[1] + 543}`;
     }
   }
 
